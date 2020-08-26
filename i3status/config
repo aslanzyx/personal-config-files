@@ -1,0 +1,53 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  color_good = "#50FA7B"
+  color_degraded = "#F1FA8C"
+  color_bad = "#FF5555"
+}
+
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "memory"
+order += "battery 0"
+order += "volume master"
+order += "tztime local"
+order += "tztime vancouver"
+order += "wireless wlp1s0"
+
+cpu_usage {
+	format = "CPU %usage"
+}
+
+memory {
+	format = "MEM %used"
+}
+
+tztime local {
+	format = "CHN %Y-%m-%d %H:%M"
+}
+
+tztime vancouver {
+	format = "PDT %Y-%m-%d %H:%M"
+	timezone = "America/Vancouver"
+}
+
+battery 0 {
+	format = "%status %percentage"
+}
+
+cpu_temperature 0 {
+	format = "TMP %degrees"
+}
+
+volume master {
+	format = "VOL %volume"
+	format_muted = "VOL mute"
+	device = "default"
+	mixer = "Master"
+}
+
+wireless wlp1s0 {
+	format_up = "WiFi %essid"
+	format_down = "WiFi disconnected"
+}
